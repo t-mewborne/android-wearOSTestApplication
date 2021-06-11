@@ -1,0 +1,2 @@
+rootProject.name = "WearOS Test Application"
+include ':app'
