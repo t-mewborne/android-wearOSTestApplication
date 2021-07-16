@@ -15,21 +15,21 @@
         app:layout_boxedEdges="all">
 
         <TextView
-            android:id="@+id/txtXVal2"
+            android:id="@+id/txtXValGyro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/xValue"
             android:translationY="65dp" />
 
         <TextView
-            android:id="@+id/txtZVal2"
+            android:id="@+id/txtZValGyro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zValue"
             android:translationY="105dp" />
 
         <TextView
-            android:id="@+id/txtYVal2"
+            android:id="@+id/txtYValGyro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yValue"

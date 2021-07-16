@@ -15,9 +15,9 @@ import com.example.wearostestapplication.databinding.ActivityMainBinding;
 public class MainActivity extends Activity implements SensorEventListener{
 
     private TextView mTextView;
-    TextView txtXVal;
-    TextView txtYVal;
-    TextView txtZVal;
+    TextView txtXValAccel;
+    TextView txtYValAccel;
+    TextView txtZValAccel;
     TextView txtXValGyro;
     TextView txtYValGyro;
     TextView txtZValGyro;
@@ -36,12 +36,12 @@ public class MainActivity extends Activity implements SensorEventListener{
 
         mTextView = binding.txtXVal;
 
-        txtXVal = findViewById(R.id.txtXVal);
-        txtYVal = findViewById(R.id.txtYVal);
-        txtZVal = findViewById(R.id.txtZVal);
-        txtXValGyro = findViewById(R.id.txtXVal2);
-        txtYValGyro = findViewById(R.id.txtYVal2);
-        txtZValGyro = findViewById(R.id.txtZVal2);
+        txtXValAccel = findViewById(R.id.txtXVal);
+        txtYValAccel = findViewById(R.id.txtYVal);
+        txtZValAccel = findViewById(R.id.txtZVal);
+        txtXValGyro = findViewById(R.id.txtXValGyro);
+        txtYValGyro = findViewById(R.id.txtYValGyro);
+        txtZValGyro = findViewById(R.id.txtZValGyro);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
@@ -59,9 +59,9 @@ public class MainActivity extends Activity implements SensorEventListener{
         String yVal = "Y: " + se.values[1];
         String zVal = "Z: " + se.values[2];
         if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            txtXVal.setText(xVal);
-            txtYVal.setText(yVal);
-            txtZVal.setText(zVal);
+            txtXValAccel.setText(xVal);
+            txtYValAccel.setText(yVal);
+            txtZValAccel.setText(zVal);
         }
         else if (sensor.getType() == Sensor.TYPE_GYROSCOPE) {
             txtXValGyro.setText(xVal);
@@ -79,7 +79,7 @@ public class MainActivity extends Activity implements SensorEventListener{
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(MainActivity.this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        //sensorManager.registerListener(MainActivity.this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
